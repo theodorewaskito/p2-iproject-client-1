@@ -8,7 +8,7 @@
       <div class="card mx-3">
         <div class="row ">
 
-          <div class="col-md-7 px-3">
+          <div class="col-md-9 px-3">
             <div class="card-block px-6">
               
               <h4 class="card-title">{{drinkDatas.strDrink}}</h4>
@@ -20,7 +20,7 @@
             </div>
           </div>
           <!-- Carousel start -->
-          <div class="col-md-5">
+          <div class="col-md-3">
             <div id="CarouselTest" class="carousel slide" data-ride="carousel">
               
               <div class="carousel-inner">
@@ -29,7 +29,7 @@
                     class="d-block" 
                     :src="drinkDatas.strDrinkThumb" 
                     alt=""
-                    width="50%">
+                    width="100%">
                 </div>
                 
               
@@ -52,7 +52,7 @@
               type="text" 
               id="form1"  
               class="form-control" 
-              placeholder="Search"/>
+              placeholder="Search Recipe"/>
             <button 
               @click.prevent="searchData"
               type="submit" 
