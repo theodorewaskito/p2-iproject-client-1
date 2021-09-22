@@ -1,17 +1,20 @@
 <template>
-  <div class="card m-2" style="width: 18rem;">
-    <img src="https://cdn.dribbble.com/users/965187/screenshots/4227067/untitled-1.jpg" class="card-img-top" alt="...">
+
+  <div class="card my-3 mx-4 text-center" style="width: 18rem;">
+    <img :src="recipeData.recipe.image">
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+      <h5 class="card-title">{{recipeData.recipe.label}}</h5>
+      <p class="card-text"></p>
+      <a href="#" class="btn btn-success">Details</a>
     </div>
   </div>
+
 </template>
 
 <script>
 export default {
-  name: "RecipeCard"
+  name: "RecipeCard",
+  props: [ "recipeData" ]
 }
 </script>
 

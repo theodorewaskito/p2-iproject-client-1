@@ -57,7 +57,19 @@
 
 <script>
 export default {
-  name: "Navbar"
+  name: "Navbar",
+  methods: {
+    logout() {
+      localStorage.clear()
+      this.$store.commit("SET_ISLOGIN", false)
+      this.$router.push("/")
+    }
+  },
+  computed: {
+    isLogin() {
+      return this.$store.state.isLogin
+    }
+  }
 }
 </script>
 
