@@ -16,8 +16,8 @@
               v-if="isLogin"
               class="nav-link" 
               aria-current="page" 
-              to="/bookmark"
-            >Favorites</router-link>
+              to="/Chat"
+            >Favourite</router-link>
           </li>
         </ul>
       </div>

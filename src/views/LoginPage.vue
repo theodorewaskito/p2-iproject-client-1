@@ -62,9 +62,10 @@ export default {
       this.$store.dispatch("submitLogin", payload)
       .then(({data}) => {
         localStorage.setItem("access_token", data.access_token)
+        this.$store.commit("SET_ISLOGIN", true)
         this.$router.push("/")
         this.$store.dispatch("fetchRecipes")
-        this.$store.commit("SET_ISLOGIN", true)
+        this.$store.dispatch("fetchDrinks")
       })
       .catch((err) => {
         Swal.fire({

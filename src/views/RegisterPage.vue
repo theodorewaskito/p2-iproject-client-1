@@ -15,10 +15,6 @@
           <label for="inputAddress" class="form-label">Phone Number</label>
           <input v-model="phoneNumber" type="text" class="form-control" id="inputAddress" placeholder="081XXXXXXXX">
         </div>
-        <div class="col-12">
-          <label for="inputAddress2" class="form-label">Address</label>
-          <input v-model="address" type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-        </div>
         <div class="d-grid gap-2 py-2 mt-4">
           <button type="submit" class="btn btn-success">Sign up</button>
         </div>
@@ -43,7 +39,39 @@
 
 <script>
 export default {
-  name: "RegisterPage"
+  name: "RegisterPage",
+  data() {
+    return {
+      email: '',
+      password: '',
+      phoneNumber: ''
+    }
+  },
+  methods: {
+    register() {
+      const payload = {
+        email: this.email,
+        password: this.password,
+        phoneNumber: this.phoneNumber
+      }
+      this.$store.dispatch("submitRegister", payload)
+      .then(({data}) => {
+        Swal.fire({
+          icon: 'success',
+          title: 'Sucess!',
+          text: 'You are registered, please Login'
+        })
+        this.$router.push("/login")
+      })
+      .catch((err) => {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: err.response.data.message[0]
+        })
+      })
+    }
+  }
 }
 </script>
 
