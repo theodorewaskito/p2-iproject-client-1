@@ -3,6 +3,9 @@
     <div class="text-center">
       <h1>{{recipe.recipe.label}}</h1>
     </div>
+    <div class="d-flex justify-content-center">
+      <img :src="recipe.recipe.image" alt="..." class="img-thumbnail">
+    </div>
     <div>
       <p>{{recipe.recipe.ingredientLines}}</p>
     </div>
@@ -15,6 +18,9 @@ export default {
   computed: {
     recipe() {
       return this.$store.state.recipe
+    },
+    ingredient() {
+      return this.$store.state.recipe.ingredientLines.split(",")
     }
   }
 }

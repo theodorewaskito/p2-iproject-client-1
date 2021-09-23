@@ -4,6 +4,7 @@ import HomePage from '../views/HomePage.vue'
 import RegisterPage from '../views/RegisterPage.vue'
 import LoginPage from '../views/LoginPage.vue'
 import DetailPage from '../views/DetailPage.vue'
+import FavouritePage from '../views/FavouritePage.vue'
 
 Vue.use(VueRouter)
 
@@ -41,6 +42,11 @@ const routes = [
     path: '/detail/:i',
     name: 'DetailPage',
     component: DetailPage
+  },
+  {
+    path: '/favourite',
+    name: 'FavouritePage',
+    component: FavouritePage
   }
 ]
 
