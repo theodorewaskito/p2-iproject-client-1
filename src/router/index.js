@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 import HomePage from '../views/HomePage.vue'
 import RegisterPage from '../views/RegisterPage.vue'
 import LoginPage from '../views/LoginPage.vue'
-import ChatPage from '../views/ChatPage.vue'
+import DetailPage from '../views/DetailPage.vue'
 
 Vue.use(VueRouter)
 
@@ -16,18 +16,32 @@ const routes = [
   {
     path: '/register',
     name: 'RegisterPage',
-    component: RegisterPage
+    component: RegisterPage,
+    beforeEnter: (to, from, next) => {
+      if (localStorage.getItem("access_token")) {
+        next({ name: 'HomePage'})
+      } else {
+        next()
+      }
+    }
   },
   {
     path: '/login',
     name: 'LoginPage',
-    component: LoginPage
+    component: LoginPage,
+    beforeEnter: (to, from, next) => {
+      if (localStorage.getItem("access_token")) {
+        next({ name: 'HomePage'})
+      } else {
+        next()
+      }
+    }
   },
   {
-    path: '/chat',
-    name: 'ChatPage',
-    component: ChatPage
-  },
+    path: '/detail/:i',
+    name: 'DetailPage',
+    component: DetailPage
+  }
 ]
 
 const router = new VueRouter({

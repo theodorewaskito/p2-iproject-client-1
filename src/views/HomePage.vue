@@ -3,7 +3,9 @@
     
     <!-- Drink Card -->
     <div class="container py-3">
-
+      <div class="text-center"> 
+        <h3>Drink of the Day</h3>
+      </div>
       <!-- Card Start -->
       <div class="card mx-3">
         <div class="row ">
@@ -45,14 +47,15 @@
 
 
     <form action="" class="form-filter m-2 pb-1 rounded">
-        <div class="form-group m-3">
+        <div class="form-group mx-5">
+          Search Recipe :
           <div class="input-group">
             <input
               v-model="search" 
               type="text" 
               id="form1"  
               class="form-control" 
-              placeholder="Search Recipe"/>
+              placeholder="Search"/>
             <button 
               @click.prevent="searchData"
               type="submit" 
@@ -69,9 +72,10 @@
       <!-- Recipe Card -->
       <div class="row mx-2 d-flex justify-content-center">
         <RecipeCard
-          v-for="recipeData in recipeDatas"
+          v-for="recipeData, i in recipeDatas"
           :key="recipeData.recipe.label"
           :recipeData="recipeData"
+          :i="i"
         ></RecipeCard>
       </div>
     </div>

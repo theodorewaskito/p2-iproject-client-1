@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="container">
+  <div id="app">
     <Navbar></Navbar>
     <router-view/>
     <HFooter class="position-relative"></HFooter>

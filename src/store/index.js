@@ -9,7 +9,8 @@ export default new Vuex.Store({
   state: {
     isLogin: false,
     recipeDatas: [],
-    drinkDatas: {}
+    drinkDatas: {},
+    recipe: {}
   },
   mutations: {
     SET_ISLOGIN (state, payload) {
@@ -21,6 +22,9 @@ export default new Vuex.Store({
     SET_DRINKDATA (state, payload) {
       state.drinkDatas = payload
     },
+    SET_RECIPE (state, payload) {
+      state.recipe = payload
+    }
   },
   actions: {
     submitLogin(context, payload) {
