@@ -40,12 +40,42 @@
       </div>
       
     </div>
+
   </section>
 </template>
 
 <script>
 export default {
-  name: "LoginPage"
+  name: "LoginPage",
+  data() {
+    return {
+      email: '',
+      password: '',
+    }
+  },
+  methods: {
+    login() {
+      const payload = {
+        email: this.email,
+        password: this.password
+      }
+      this.$store.dispatch("submitLogin", payload)
+      .then(({data}) => {
+        localStorage.setItem("access_token", data.access_token)
+        this.$store.commit("SET_ISLOGIN", true)
+        this.$router.push("/")
+        this.$store.dispatch("fetchRecipes")
+        this.$store.dispatch("fetchDrinks")
+      })
+      .catch((err) => {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: err.response.data.message
+        })
+      })
+    },
+  }
 }
 </script>
 

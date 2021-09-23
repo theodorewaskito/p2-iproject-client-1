@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import HomePage from '../views/HomePage.vue'
 import RegisterPage from '../views/RegisterPage.vue'
 import LoginPage from '../views/LoginPage.vue'
+import ChatPage from '../views/ChatPage.vue'
 
 Vue.use(VueRouter)
 
@@ -13,14 +14,19 @@ const routes = [
     component: HomePage
   },
   {
-    path: '/Register',
+    path: '/register',
     name: 'RegisterPage',
     component: RegisterPage
   },
   {
-    path: '/Login',
+    path: '/login',
     name: 'LoginPage',
     component: LoginPage
+  },
+  {
+    path: '/chat',
+    name: 'ChatPage',
+    component: ChatPage
   },
 ]
 

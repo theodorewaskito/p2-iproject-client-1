@@ -16,8 +16,8 @@
               v-if="isLogin"
               class="nav-link" 
               aria-current="page" 
-              to="/bookmark"
-            >Favorites</router-link>
+              to="/Chat"
+            >Favourite</router-link>
           </li>
         </ul>
       </div>
@@ -57,7 +57,19 @@
 
 <script>
 export default {
-  name: "Navbar"
+  name: "Navbar",
+  methods: {
+    logout() {
+      localStorage.clear()
+      this.$store.commit("SET_ISLOGIN", false)
+      this.$router.push("/")
+    }
+  },
+  computed: {
+    isLogin() {
+      return this.$store.state.isLogin
+    }
+  }
 }
 </script>
 
