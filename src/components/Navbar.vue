@@ -16,7 +16,7 @@
               v-if="isLogin"
               class="nav-link" 
               aria-current="page" 
-              to="/Chat"
+              to="/favourite"
             >Favourite</router-link>
           </li>
         </ul>
@@ -27,7 +27,7 @@
             v-if="!isLogin"
             type="button" 
             class="btn btn-success"
-          > Register</button>
+          >Register</button>
         </router-link>
       </div>
       <div 

@@ -31,7 +31,7 @@ export default {
   background-color: white;
 }
 
-.d-flex {
+#app{
   background-color: #ECDBBA;
 }
 </style>

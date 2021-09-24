@@ -10,7 +10,8 @@ export default new Vuex.Store({
     isLogin: false,
     recipeDatas: [],
     drinkDatas: {},
-    recipe: {}
+    recipe: {},
+    favDatas: []
   },
   mutations: {
     SET_ISLOGIN (state, payload) {
@@ -24,8 +25,11 @@ export default new Vuex.Store({
     },
     SET_RECIPE (state, payload) {
       state.recipe = payload
+    },
+    SET_FAVDATA (state, payload) {
+      state.favDatas = payload
     }
-  },
+  },  
   actions: {
     submitLogin(context, payload) {
       return axios({
@@ -53,8 +57,30 @@ export default new Vuex.Store({
         url: `/random.php`,
       })
     },  
-
-
+    addFav(context, payload) {
+      const data = { 
+        recipeName: payload.recipe.label, 
+        recipeImage: payload.recipe.image
+      }
+      console.log(data);
+      return axios({
+        method: "POST",
+        url: `/favourite/addFav`,
+        headers: {
+          access_token: localStorage.access_token
+        },
+        data: data
+      })
+    },
+    fetchFav(context) {
+      return axios({
+        method: "GET",
+        url: `/favourite`,
+        headers: {
+          access_token: localStorage.access_token
+        },
+      })
+    },  
   },
   modules: {
   }
