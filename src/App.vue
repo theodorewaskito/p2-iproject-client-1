@@ -2,7 +2,7 @@
   <div id="app">
     <Navbar></Navbar>
     <router-view/>
-    <HFooter class="position-relative"></HFooter>
+    <HFooter class="fixed-bottom"></HFooter>
   </div>
 </template>
 
@@ -32,6 +32,10 @@ export default {
 }
 
 #app{
+  background-color: #ECDBBA;
+}
+
+body{
   background-color: #ECDBBA;
 }
 </style>
