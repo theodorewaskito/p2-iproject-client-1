@@ -35,7 +35,7 @@ export default {
           Swal.fire({
             icon: 'success',
             title: 'Sucess!',
-            text: `Recipe has been favorited"`
+            text: `Recipe has been favorited`
           })
         })
         .catch((err) => {

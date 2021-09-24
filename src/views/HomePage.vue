@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex justify-content-start flex-column" id="home-page">
+  <div class="page d-flex justify-content-start flex-column" id="home-page">
     
     <!-- Drink Card -->
     <div class="container py-3">
